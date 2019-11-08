@@ -19,8 +19,15 @@ def format_list(data_type, header_rows):
     if header_rows > 0:
         items = items[header_rows:]
 
-    if not data_type and type(items[0]) in(int, float):
-        data_type = 'number'
+    if not data_type:
+        data_type = 'string'
+
+        try:
+            _ = float(items[0])
+            data_type = 'number'
+
+        except ValueError:
+            pass
 
     if data_type == 'number':
         items = ",\n".join([i for i in items])[:-3]
