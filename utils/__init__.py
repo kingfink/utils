@@ -31,10 +31,9 @@ def format_list(data_type, header_rows):
         except ValueError:
             pass
 
-    if data_type == 'number':
-        items = ",".join([i for i in items])
-        items = re.sub("'", "", items)
-        pyperclip.copy(items)
-
     items = ",".join([f"'{i}'" for i in items])
+
+    if data_type == 'number':
+        items = re.sub("'", "", items)
+
     pyperclip.copy(items)
