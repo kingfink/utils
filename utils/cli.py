@@ -1,5 +1,5 @@
 import click
-
+import utils
 
 @click.group()
 def cli():
@@ -8,13 +8,15 @@ def cli():
 
 @click.command()
 @click.option('--schema', default='analytics_prod', help='Database schema to use')
-def dr(schema):
-    click.echo('Replaced dbt references!')  # TODO: default prod, optional dev
+def rmr(schema):
+    utils.replace_model_references(schema)
+    click.echo('Replaced model references!')  # TODO: default prod, optional dev
 
 
 @click.command()
 @click.option('--type', default=None, help='Type of items in the list, number or string. If None guess')
-def fl(type):
+def fl(data_type):
+    utils.format_list(data_type)
     click.echo('Formatted list!')  # TODO: default look to see if is number, otherwise quote, or specify
 
 
