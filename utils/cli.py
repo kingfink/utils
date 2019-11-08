@@ -14,7 +14,7 @@ def rmr(schema):
 
 
 @click.command()
-@click.option('--type', default=None, help='Type of items in the list, number or string. If None guess')
+@click.option('--data_type', default=None, help='Type of items in the list, number or string. If None guess')
 def fl(data_type):
     utils.format_list(data_type)
     click.echo('Formatted list!')  # TODO: default look to see if is number, otherwise quote, or specify
