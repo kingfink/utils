@@ -5,7 +5,7 @@ import re
 def replace_model_references(schema):
     query = pyperclip.paste()
 
-    query = re.sub(r"{{ ref\('", "schema", query)
+    query = re.sub(r"{{ ref\('", f"{schema}.", query)
     query = re.sub(r"'\) }}", "", query)
 
     pyperclip.copy(query)
