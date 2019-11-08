@@ -16,6 +16,8 @@ def format_list(data_type, header_rows):
 
     items = items.split('\n')
 
+    items = [i for i in items if i != '']
+
     if header_rows > 0:
         items = items[header_rows:]
 
@@ -30,9 +32,9 @@ def format_list(data_type, header_rows):
             pass
 
     if data_type == 'number':
-        items = ",".join([i for i in items])[:-3]
+        items = ",".join([i for i in items])
         items = re.sub("'", "", items)
         pyperclip.copy(items)
 
-    items = ",".join([f"'{i}'" for i in items])[:-4]
+    items = ",".join([f"'{i}'" for i in items])
     pyperclip.copy(items)
