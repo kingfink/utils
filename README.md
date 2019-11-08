@@ -1,7 +1,8 @@
 #### Installation
 
-`pip install git+https://github.com/kingfink/utils.git`
+`$ pip install git+https://github.com/kingfink/utils.git`
 
+`$ pip3 install git+https://github.com/kingfink/utils.git`
 
 #### Overview
 
