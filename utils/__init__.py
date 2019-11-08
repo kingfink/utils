@@ -11,15 +11,21 @@ def replace_model_references(schema):
     pyperclip.copy(query)
 
 
-def format_list(data_type, header_rows):
+def format_list(data_type, header_row):
     items = pyperclip.paste()
 
     items = items.split('\n')
 
     items = [i for i in items if i != '']
 
-    if header_rows > 0:
-        items = items[header_rows:]
+    if header_row is None and items[0] in ['id', 'name']:
+        header_row = True
+
+    if header_row is None and items[0].endswith('_id'):
+        header_row = True
+
+    if header_row:
+        items = items[1:]
 
     if not data_type:
         data_type = 'string'
