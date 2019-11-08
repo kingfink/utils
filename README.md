@@ -1,1 +1,1 @@
-`pip install git+https://github.com/managedbyq/utils.git`
+`pip install git+https://github.com/kingfink/utils.git`
