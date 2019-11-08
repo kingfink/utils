@@ -11,7 +11,7 @@ setup(
     zip_safe=False,
     entry_points={
         'console_scripts': [
-            'u=utils.cli:main'
+            'u=utils.cli:cli'
         ]
     },
     install_requires=[
