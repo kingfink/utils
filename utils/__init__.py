@@ -23,7 +23,7 @@ def format_list(data_type, header_rows):
         data_type = 'number'
 
     if data_type == 'number':
-        items = ",\n".join([f"{i}" for i in items])[:-3]
+        items = ",\n".join([i for i in items])[:-3]
         pyperclip.copy(items)
 
     items = ",\n".join([f"'{i}'" for i in items])[:-4]
