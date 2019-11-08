@@ -20,5 +20,5 @@ def fl(data_type):
     click.echo('Formatted list!')  # TODO: default look to see if is number, otherwise quote, or specify
 
 
-cli.add_command(dr)
+cli.add_command(rmr)
 cli.add_command(fl)
