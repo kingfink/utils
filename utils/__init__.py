@@ -31,6 +31,7 @@ def format_list(data_type, header_rows):
 
     if data_type == 'number':
         items = ",".join([i for i in items])[:-3]
+        items = re.sub("'", "", items)
         pyperclip.copy(items)
 
     items = ",".join([f"'{i}'" for i in items])[:-4]
